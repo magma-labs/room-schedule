@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C800700B1C651122007B363F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C800700A1C651122007B363F /* main.m */; };
+		C800700E1C651122007B363F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C800700D1C651122007B363F /* AppDelegate.m */; };
+		C80070111C651122007B363F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80070101C651122007B363F /* ViewController.m */; };
+		C80070141C651122007B363F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80070121C651122007B363F /* Main.storyboard */; };
+		C80070161C651122007B363F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C80070151C651122007B363F /* Assets.xcassets */; };
+		C80070191C651122007B363F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80070171C651122007B363F /* LaunchScreen.storyboard */; };
+		C80070241C651123007B363F /* MagmaCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C80070231C651123007B363F /* MagmaCalendarTests.m */; };
+		C800702F1C651123007B363F /* MagmaCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C800702E1C651123007B363F /* MagmaCalendarUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C80070201C651123007B363F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8006FFE1C651122007B363F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C80070051C651122007B363F;
+			remoteInfo = MagmaCalendar;
+		};
+		C800702B1C651123007B363F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8006FFE1C651122007B363F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C80070051C651122007B363F;
+			remoteInfo = MagmaCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C80070061C651122007B363F /* MagmaCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagmaCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C800700A1C651122007B363F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C800700C1C651122007B363F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C800700D1C651122007B363F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C800700F1C651122007B363F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C80070101C651122007B363F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C80070131C651122007B363F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C80070151C651122007B363F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C80070181C651122007B363F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C800701A1C651122007B363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C800701F1C651123007B363F /* MagmaCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagmaCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80070231C651123007B363F /* MagmaCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagmaCalendarTests.m; sourceTree = "<group>"; };
+		C80070251C651123007B363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C800702A1C651123007B363F /* MagmaCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagmaCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C800702E1C651123007B363F /* MagmaCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagmaCalendarUITests.m; sourceTree = "<group>"; };
+		C80070301C651123007B363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C80070031C651122007B363F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C800701C1C651123007B363F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C80070271C651123007B363F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C8006FFD1C651122007B363F = {
+			isa = PBXGroup;
+			children = (
+				C80070081C651122007B363F /* MagmaCalendar */,
+				C80070221C651123007B363F /* MagmaCalendarTests */,
+				C800702D1C651123007B363F /* MagmaCalendarUITests */,
+				C80070071C651122007B363F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C80070071C651122007B363F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C80070061C651122007B363F /* MagmaCalendar.app */,
+				C800701F1C651123007B363F /* MagmaCalendarTests.xctest */,
+				C800702A1C651123007B363F /* MagmaCalendarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C80070081C651122007B363F /* MagmaCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				C800700C1C651122007B363F /* AppDelegate.h */,
+				C800700D1C651122007B363F /* AppDelegate.m */,
+				C800700F1C651122007B363F /* ViewController.h */,
+				C80070101C651122007B363F /* ViewController.m */,
+				C80070121C651122007B363F /* Main.storyboard */,
+				C80070151C651122007B363F /* Assets.xcassets */,
+				C80070171C651122007B363F /* LaunchScreen.storyboard */,
+				C800701A1C651122007B363F /* Info.plist */,
+				C80070091C651122007B363F /* Supporting Files */,
+			);
+			path = MagmaCalendar;
+			sourceTree = "<group>";
+		};
+		C80070091C651122007B363F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C800700A1C651122007B363F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C80070221C651123007B363F /* MagmaCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				C80070231C651123007B363F /* MagmaCalendarTests.m */,
+				C80070251C651123007B363F /* Info.plist */,
+			);
+			path = MagmaCalendarTests;
+			sourceTree = "<group>";
+		};
+		C800702D1C651123007B363F /* MagmaCalendarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C800702E1C651123007B363F /* MagmaCalendarUITests.m */,
+				C80070301C651123007B363F /* Info.plist */,
+			);
+			path = MagmaCalendarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C80070051C651122007B363F /* MagmaCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C80070331C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendar" */;
+			buildPhases = (
+				C80070021C651122007B363F /* Sources */,
+				C80070031C651122007B363F /* Frameworks */,
+				C80070041C651122007B363F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagmaCalendar;
+			productName = MagmaCalendar;
+			productReference = C80070061C651122007B363F /* MagmaCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C800701E1C651123007B363F /* MagmaCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C80070361C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarTests" */;
+			buildPhases = (
+				C800701B1C651123007B363F /* Sources */,
+				C800701C1C651123007B363F /* Frameworks */,
+				C800701D1C651123007B363F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C80070211C651123007B363F /* PBXTargetDependency */,
+			);
+			name = MagmaCalendarTests;
+			productName = MagmaCalendarTests;
+			productReference = C800701F1C651123007B363F /* MagmaCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C80070291C651123007B363F /* MagmaCalendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C80070391C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarUITests" */;
+			buildPhases = (
+				C80070261C651123007B363F /* Sources */,
+				C80070271C651123007B363F /* Frameworks */,
+				C80070281C651123007B363F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C800702C1C651123007B363F /* PBXTargetDependency */,
+			);
+			name = MagmaCalendarUITests;
+			productName = MagmaCalendarUITests;
+			productReference = C800702A1C651123007B363F /* MagmaCalendarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8006FFE1C651122007B363F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Omar Guzman";
+				TargetAttributes = {
+					C80070051C651122007B363F = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					C800701E1C651123007B363F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = C80070051C651122007B363F;
+					};
+					C80070291C651123007B363F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = C80070051C651122007B363F;
+					};
+				};
+			};
+			buildConfigurationList = C80070011C651122007B363F /* Build configuration list for PBXProject "MagmaCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C8006FFD1C651122007B363F;
+			productRefGroup = C80070071C651122007B363F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C80070051C651122007B363F /* MagmaCalendar */,
+				C800701E1C651123007B363F /* MagmaCalendarTests */,
+				C80070291C651123007B363F /* MagmaCalendarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C80070041C651122007B363F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80070191C651122007B363F /* LaunchScreen.storyboard in Resources */,
+				C80070161C651122007B363F /* Assets.xcassets in Resources */,
+				C80070141C651122007B363F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C800701D1C651123007B363F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C80070281C651123007B363F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C80070021C651122007B363F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80070111C651122007B363F /* ViewController.m in Sources */,
+				C800700E1C651122007B363F /* AppDelegate.m in Sources */,
+				C800700B1C651122007B363F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C800701B1C651123007B363F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80070241C651123007B363F /* MagmaCalendarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C80070261C651123007B363F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C800702F1C651123007B363F /* MagmaCalendarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C80070211C651123007B363F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C80070051C651122007B363F /* MagmaCalendar */;
+			targetProxy = C80070201C651123007B363F /* PBXContainerItemProxy */;
+		};
+		C800702C1C651123007B363F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C80070051C651122007B363F /* MagmaCalendar */;
+			targetProxy = C800702B1C651123007B363F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C80070121C651122007B363F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80070131C651122007B363F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C80070171C651122007B363F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C80070181C651122007B363F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C80070311C651123007B363F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C80070321C651123007B363F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C80070341C651123007B363F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagmaCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C80070351C651123007B363F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagmaCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C80070371C651123007B363F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MagmaCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagmaCalendar.app/MagmaCalendar";
+			};
+			name = Debug;
+		};
+		C80070381C651123007B363F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MagmaCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagmaCalendar.app/MagmaCalendar";
+			};
+			name = Release;
+		};
+		C800703A1C651123007B363F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MagmaCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MagmaCalendar;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C800703B1C651123007B363F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MagmaCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MagmaCalendar;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C80070011C651122007B363F /* Build configuration list for PBXProject "MagmaCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80070311C651123007B363F /* Debug */,
+				C80070321C651123007B363F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C80070331C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80070341C651123007B363F /* Debug */,
+				C80070351C651123007B363F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C80070361C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80070371C651123007B363F /* Debug */,
+				C80070381C651123007B363F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C80070391C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C800703A1C651123007B363F /* Debug */,
+				C800703B1C651123007B363F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8006FFE1C651122007B363F /* Project object */;
+}

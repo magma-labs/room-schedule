@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38B9CD94CDF690BB8EFC7B8D /* libPods-MagmaCalendarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F47EC17B1481CC2E77FA44 /* libPods-MagmaCalendarTests.a */; };
+		3DD9A2F13F81AFD41C57ED47 /* libPods-MagmaCalendar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 194CE65796C1182CC5664B5A /* libPods-MagmaCalendar.a */; };
+		6AA8F264E70692BA20FA2B44 /* libPods-MagmaCalendarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E32A55E617B3EA825CAA4D26 /* libPods-MagmaCalendarUITests.a */; };
 		C800700B1C651122007B363F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C800700A1C651122007B363F /* main.m */; };
 		C800700E1C651122007B363F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C800700D1C651122007B363F /* AppDelegate.m */; };
 		C80070111C651122007B363F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80070101C651122007B363F /* ViewController.m */; };
@@ -15,6 +18,7 @@
 		C80070191C651122007B363F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80070171C651122007B363F /* LaunchScreen.storyboard */; };
 		C80070241C651123007B363F /* MagmaCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C80070231C651123007B363F /* MagmaCalendarTests.m */; };
 		C800702F1C651123007B363F /* MagmaCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C800702E1C651123007B363F /* MagmaCalendarUITests.m */; };
+		C8A943A81C6A529500F59CA1 /* RESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A943A71C6A529500F59CA1 /* RESTManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021F2B96D02DB72262C6684C /* Pods-MagmaCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagmaCalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagmaCalendar/Pods-MagmaCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		194CE65796C1182CC5664B5A /* libPods-MagmaCalendar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MagmaCalendar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24856CFD22CFA9D9B34E4C71 /* Pods-MagmaCalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagmaCalendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagmaCalendarTests/Pods-MagmaCalendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		32F47EC17B1481CC2E77FA44 /* libPods-MagmaCalendarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MagmaCalendarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34548D36D1E55C9C382FCA0C /* Pods-MagmaCalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagmaCalendarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagmaCalendarUITests/Pods-MagmaCalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		87DD571DFC2647EE0D8CD1A7 /* Pods-MagmaCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagmaCalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagmaCalendar/Pods-MagmaCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		8C96ABC6369B329A01D48737 /* Pods-MagmaCalendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagmaCalendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagmaCalendarUITests/Pods-MagmaCalendarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C80070061C651122007B363F /* MagmaCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagmaCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C800700A1C651122007B363F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C800700C1C651122007B363F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +62,10 @@
 		C800702A1C651123007B363F /* MagmaCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagmaCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C800702E1C651123007B363F /* MagmaCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagmaCalendarUITests.m; sourceTree = "<group>"; };
 		C80070301C651123007B363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8A943A61C6A529500F59CA1 /* RESTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTManager.h; sourceTree = "<group>"; };
+		C8A943A71C6A529500F59CA1 /* RESTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTManager.m; sourceTree = "<group>"; };
+		E32A55E617B3EA825CAA4D26 /* libPods-MagmaCalendarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MagmaCalendarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD35715F9974A0A42CFE59D /* Pods-MagmaCalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagmaCalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagmaCalendarTests/Pods-MagmaCalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD9A2F13F81AFD41C57ED47 /* libPods-MagmaCalendar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B9CD94CDF690BB8EFC7B8D /* libPods-MagmaCalendarTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +89,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA8F264E70692BA20FA2B44 /* libPods-MagmaCalendarUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23C280694E409CCBE852EB80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				194CE65796C1182CC5664B5A /* libPods-MagmaCalendar.a */,
+				32F47EC17B1481CC2E77FA44 /* libPods-MagmaCalendarTests.a */,
+				E32A55E617B3EA825CAA4D26 /* libPods-MagmaCalendarUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A64814AC744C3CE831CA430 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				021F2B96D02DB72262C6684C /* Pods-MagmaCalendar.debug.xcconfig */,
+				87DD571DFC2647EE0D8CD1A7 /* Pods-MagmaCalendar.release.xcconfig */,
+				FBD35715F9974A0A42CFE59D /* Pods-MagmaCalendarTests.debug.xcconfig */,
+				24856CFD22CFA9D9B34E4C71 /* Pods-MagmaCalendarTests.release.xcconfig */,
+				34548D36D1E55C9C382FCA0C /* Pods-MagmaCalendarUITests.debug.xcconfig */,
+				8C96ABC6369B329A01D48737 /* Pods-MagmaCalendarUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C8006FFD1C651122007B363F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +126,8 @@
 				C80070221C651123007B363F /* MagmaCalendarTests */,
 				C800702D1C651123007B363F /* MagmaCalendarUITests */,
 				C80070071C651122007B363F /* Products */,
+				7A64814AC744C3CE831CA430 /* Pods */,
+				23C280694E409CCBE852EB80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +144,7 @@
 		C80070081C651122007B363F /* MagmaCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				C8A943A51C6A527B00F59CA1 /* Managers */,
 				C800700C1C651122007B363F /* AppDelegate.h */,
 				C800700D1C651122007B363F /* AppDelegate.m */,
 				C800700F1C651122007B363F /* ViewController.h */,
@@ -140,6 +184,15 @@
 			path = MagmaCalendarUITests;
 			sourceTree = "<group>";
 		};
+		C8A943A51C6A527B00F59CA1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C8A943A61C6A529500F59CA1 /* RESTManager.h */,
+				C8A943A71C6A529500F59CA1 /* RESTManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C80070331C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendar" */;
 			buildPhases = (
+				ECF876CD2372406D4B77CE46 /* Check Pods Manifest.lock */,
 				C80070021C651122007B363F /* Sources */,
 				C80070031C651122007B363F /* Frameworks */,
 				C80070041C651122007B363F /* Resources */,
+				19079DAAD8CBFCB527EA0B84 /* Embed Pods Frameworks */,
+				38BB804C7D3CDBF38B491252 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C80070361C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarTests" */;
 			buildPhases = (
+				93C248DB880329E702A6A469 /* Check Pods Manifest.lock */,
 				C800701B1C651123007B363F /* Sources */,
 				C800701C1C651123007B363F /* Frameworks */,
 				C800701D1C651123007B363F /* Resources */,
+				1F5D79D5689CF2A9D52B21E8 /* Embed Pods Frameworks */,
+				1EB516F43D8856D8E2F03456 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C80070391C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarUITests" */;
 			buildPhases = (
+				A048AF9F04B68491D4A55386 /* Check Pods Manifest.lock */,
 				C80070261C651123007B363F /* Sources */,
 				C80070271C651123007B363F /* Frameworks */,
 				C80070281C651123007B363F /* Resources */,
+				A9B2ACBBCDE9CA9AD959EB9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +268,7 @@
 				TargetAttributes = {
 					C80070051C651122007B363F = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = C5R6T8J57B;
 					};
 					C800701E1C651123007B363F = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -265,12 +327,136 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19079DAAD8CBFCB527EA0B84 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagmaCalendar/Pods-MagmaCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EB516F43D8856D8E2F03456 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagmaCalendarTests/Pods-MagmaCalendarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F5D79D5689CF2A9D52B21E8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagmaCalendarTests/Pods-MagmaCalendarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38BB804C7D3CDBF38B491252 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagmaCalendar/Pods-MagmaCalendar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93C248DB880329E702A6A469 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A048AF9F04B68491D4A55386 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A9B2ACBBCDE9CA9AD959EB9C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagmaCalendarUITests/Pods-MagmaCalendarUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECF876CD2372406D4B77CE46 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C80070021C651122007B363F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C80070111C651122007B363F /* ViewController.m in Sources */,
+				C8A943A81C6A529500F59CA1 /* RESTManager.m in Sources */,
 				C800700E1C651122007B363F /* AppDelegate.m in Sources */,
 				C800700B1C651122007B363F /* main.m in Sources */,
 			);
@@ -411,28 +597,37 @@
 		};
 		C80070341C651123007B363F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 021F2B96D02DB72262C6684C /* Pods-MagmaCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MagmaCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C80070351C651123007B363F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DD571DFC2647EE0D8CD1A7 /* Pods-MagmaCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MagmaCalendar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BrightCoders.MagmaCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		C80070371C651123007B363F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD35715F9974A0A42CFE59D /* Pods-MagmaCalendarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MagmaCalendarTests/Info.plist;
@@ -445,6 +640,7 @@
 		};
 		C80070381C651123007B363F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24856CFD22CFA9D9B34E4C71 /* Pods-MagmaCalendarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MagmaCalendarTests/Info.plist;
@@ -457,6 +653,7 @@
 		};
 		C800703A1C651123007B363F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34548D36D1E55C9C382FCA0C /* Pods-MagmaCalendarUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MagmaCalendarUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -469,6 +666,7 @@
 		};
 		C800703B1C651123007B363F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C96ABC6369B329A01D48737 /* Pods-MagmaCalendarUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MagmaCalendarUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -498,6 +696,7 @@
 				C80070351C651123007B363F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C80070361C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +705,7 @@
 				C80070381C651123007B363F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C80070391C651123007B363F /* Build configuration list for PBXNativeTarget "MagmaCalendarUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +714,7 @@
 				C800703B1C651123007B363F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

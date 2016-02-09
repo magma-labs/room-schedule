@@ -8,6 +8,8 @@ pod 'Google', '~> 1.3.2'
 pod 'gtm-oauth2', '~> 1.0'
 pod 'Google-API-Client', '~> 1.0'
 pod 'JGProgressHUD', '~> 1.3.1'
+pod 'Fabric'
+pod 'Crashlytics'
 end
 
 target 'MagmaCalendarTests' do
@@ -15,6 +17,8 @@ pod 'Google', '~> 1.3.2'
 pod 'gtm-oauth2', '~> 1.0'
 pod 'Google-API-Client', '~> 1.0'
 pod 'JGProgressHUD', '~> 1.3.1'
+pod 'Fabric'
+pod 'Crashlytics'
 end
 
 target 'MagmaCalendarUITests' do
@@ -22,5 +26,7 @@ pod 'Google', '~> 1.3.2'
 pod 'gtm-oauth2', '~> 1.0'
 pod 'Google-API-Client', '~> 1.0'
 pod 'JGProgressHUD', '~> 1.3.1'
+pod 'Fabric'
+pod 'Crashlytics'
 end
 

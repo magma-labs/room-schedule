@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.6.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.5)
   - Google (1.3.2):
     - Google/Core (= 1.3.2)
   - Google-API-Client (1.0.422):
@@ -171,12 +174,16 @@ PODS:
   - JGProgressHUD (1.3.1)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - Google (~> 1.3.2)
   - Google-API-Client (~> 1.0)
   - gtm-oauth2 (~> 1.0)
   - JGProgressHUD (~> 1.3.1)
 
 SPEC CHECKSUMS:
+  Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
+  Fabric: 338ffd3c2afcab120638907b4251189de9ad17b3
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   Google-API-Client: cb712cf122f1d7fda966de4c2bc551324573366c
   GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03

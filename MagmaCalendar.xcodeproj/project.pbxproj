@@ -206,6 +206,7 @@
 				C80070041C651122007B363F /* Resources */,
 				19079DAAD8CBFCB527EA0B84 /* Embed Pods Frameworks */,
 				38BB804C7D3CDBF38B491252 /* Copy Pods Resources */,
+				C8A943A91C6AA13B00F59CA1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -432,6 +433,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagmaCalendarUITests/Pods-MagmaCalendarUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C8A943A91C6AA13B00F59CA1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 77a1f1b62ad429b430da69a085875173efc5aca6 47fb47d423d3567ad5f593e4cccfb225e726f64b821298b3013ee181a945d0b6";
 		};
 		ECF876CD2372406D4B77CE46 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

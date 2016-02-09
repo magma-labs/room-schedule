@@ -53,7 +53,6 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             [pRooms reloadAllComponents];
             [self startLoadingCurrentCalendarInfo];
         }
-        [HUD dismissAnimated:YES];
     }];
 }
 
@@ -76,6 +75,8 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    HUD.textLabel.text = @"Loading Events...";
+    [HUD showInView:self.viewBg];
     NSArray * allKeys = dictRooms.allKeys;
     currentRoom = [dictRooms objectForKey:[allKeys objectAtIndex:row]];
     [self startLoadingCurrentCalendarInfo];
@@ -225,6 +226,10 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     } else {
         [self showAlert:@"Error" message:error.localizedDescription];
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if([HUD isVisible])
+            [HUD dismiss];
+    });
 }
 
 

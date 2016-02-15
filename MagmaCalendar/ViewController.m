@@ -263,9 +263,10 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
 
 // Helper for showing an alert
 - (void)showAlert:(NSString *)title message:(NSString *)message {
-    UIAlertView *alert;
-    alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction* dismissAlertController = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:dismissAlertController];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

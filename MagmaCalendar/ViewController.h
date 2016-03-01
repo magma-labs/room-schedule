@@ -18,16 +18,29 @@
 @property (nonatomic, strong) GTLServiceCalendar *service;
 @property (nonatomic, strong) IBOutlet UILabel * lblTimer;
 @property (nonatomic, strong) IBOutlet UIView * viewBg;
+@property (nonatomic, strong) IBOutlet UILabel * lblCurrentRoom;
 @property (nonatomic, strong) IBOutlet UILabel * lblEvent;
-@property (nonatomic, strong) IBOutlet UILabel * lblFrom;
-@property (nonatomic, strong) IBOutlet UILabel * lblTo;
-@property (nonatomic, strong) IBOutlet UITextView * txtDescription;
 @property (nonatomic, strong) IBOutlet UIPickerView * pRooms;
+@property (nonatomic, strong) IBOutlet UILabel * lblCurrentEventTitle;
+@property (nonatomic, strong) IBOutlet UILabel * lblFromTo;
+@property (nonatomic, strong) IBOutlet UIImageView * imgClockNow;
+@property (nonatomic, strong) IBOutlet UILabel * lblPreviousEvent;
+@property (nonatomic, strong) IBOutlet UILabel * lblCommingUpNext;
+@property (nonatomic, strong) IBOutlet UILabel * lblLateToday;
+@property (nonatomic, strong) IBOutlet UILabel * lblCommingUpNextEventTime;
+@property (nonatomic, strong) IBOutlet UILabel * lblLateTodayEventTime;
+@property (nonatomic, strong) IBOutlet UIImageView * imgCommingUpClock;
+@property (nonatomic, strong) IBOutlet UIImageView * imgLateClock;
+@property (nonatomic, strong) IBOutlet UIView * viewCommingLate;
 @property (nonatomic, strong) NSMutableArray * arrEvents;
 @property (nonatomic, strong) NSString * currentEvent;
 @property (nonatomic, strong) JGProgressHUD * HUD;
 @property (nonatomic, strong) NSString * currentRoom;
 @property (nonatomic, strong) NSMutableDictionary * dictRooms;
 @property (nonatomic, strong) NSMutableString * eventString;
+@property (nonatomic, assign) BOOL isThereEvent;
+@property (nonatomic, strong) id currentPrevEvent;
+@property (nonatomic, strong) id currentNextEvent;
+@property (nonatomic, strong) id currentLateEvent;
 @end
 

@@ -141,10 +141,6 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     df.timeZone = [NSTimeZone localTimeZone];
     df.dateFormat = @"HH:mm";
     BOOL hasEvent = NO;
-    id cEvent;
-    id pEvent;
-    id nEvent;
-    id lEvent; // late event
     if([arrEvents count] != 0)
     {
         currentPrevEvent = currentNextEvent = currentLateEvent = nil;
@@ -154,17 +150,13 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             NSDate * st = [event objectForKey:@"startTime"];
             NSDate * et = [event objectForKey:@"endTime"];
             NSDate * ct = [NSDate date];
-            if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending)
+            if([st compare:ct] == NSOrderedDescending && [et compare:ct] == NSOrderedDescending) //next event
             {
-                cEvent = event;
-            }
-            else if([st compare:ct] == NSOrderedDescending && [et compare:ct] == NSOrderedDescending) //next event
-            {
-                nEvent = event;
+                currentNextEvent = event;
             }
             else if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedAscending) //previous event
             {
-                pEvent = event;
+                currentPrevEvent = event;
             }
             if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending)
             {
@@ -182,44 +174,49 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                     lblCurrentEventTitle.hidden = NO;
                     imgClockNow.hidden = NO;
                     colorBG = [ColorManager busyColor];
-                    if(pEvent)
-                    {
-                        lblPreviousEvent.hidden = NO;
-                        lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [pEvent objectForKey:@"summary"]];
-                        lblPreviousEvent.textColor = [ColorManager fontBusyColor];
-                    }
-                    else if (!pEvent)
-                    {
-                        lblPreviousEvent.hidden = YES;
-                    }
-                    if(nEvent)
-                    {
-                        NSDate * cSt = [nEvent objectForKey:@"startTime"];
-                        NSDate * cEt = [nEvent objectForKey:@"endTime"];
-                        lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
-                        lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [nEvent objectForKey:@"summary"]];
-                        lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
-                    }
-                    else if (!nEvent)
-                    {
-                        lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = YES;
-                    }
                 }
+            }
+            if(currentPrevEvent)
+            {
+                lblPreviousEvent.hidden = NO;
+                lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
+                lblPreviousEvent.textColor = [ColorManager fontBusyColor];
+            }
+            else if (!currentPrevEvent)
+            {
+                lblPreviousEvent.hidden = YES;
+            }
+            if(currentNextEvent)
+            {
+                NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
+                NSDate * cEt = [currentNextEvent objectForKey:@"endTime"];
+                lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
+                lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [currentNextEvent objectForKey:@"summary"]];
+                lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
+                lblCommingUpNext.textColor = [ColorManager fontBusyColor];
+                lblCommingUpNextEventTime.textColor = [ColorManager fontBusyColor];
+            }
+            else if (!currentNextEvent)
+            {
+                lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = YES;
             }
         }
         if(!hasEvent)
         {
-            if(pEvent)
+            if(currentPrevEvent)
             {
                 lblPreviousEvent.hidden = NO;
-                lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [pEvent objectForKey:@"summary"]];
+                lblPreviousEvent.textColor = [ColorManager fontAvailableColor];
+                lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
             }
-            if(nEvent)
+            if(currentNextEvent)
             {
-                NSDate * cSt = [nEvent objectForKey:@"startTime"];
-                NSDate * cEt = [nEvent objectForKey:@"endTime"];
+                NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
+                NSDate * cEt = [currentNextEvent objectForKey:@"endTime"];
+                lblCommingUpNextEventTime.textColor = [ColorManager fontAvailableColor];
+                lblCommingUpNext.textColor = [ColorManager fontAvailableColor];
                 lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
-                lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [nEvent objectForKey:@"summary"]];
+                lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [currentNextEvent objectForKey:@"summary"]];
                 lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
             }
             lblCurrentEventTitle.hidden = YES;

@@ -141,7 +141,6 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     df.timeZone = [NSTimeZone localTimeZone];
     df.dateFormat = @"HH:mm";
     BOOL hasEvent = NO;
-    int i = 0;
     id cEvent;
     id pEvent;
     id nEvent;
@@ -205,10 +204,8 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                     {
                         lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = YES;
                     }
-                    break;
                 }
             }
-            i++;
         }
         if(!hasEvent)
         {

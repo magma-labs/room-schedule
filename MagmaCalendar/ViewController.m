@@ -15,7 +15,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
 @implementation ViewController
 
 @synthesize service = _service;
-@synthesize lblTimer, viewBg, arrEvents, currentEvent, lblEvent, HUD, currentRoom, pRooms, dictRooms, eventString, lblCurrentRoom, isThereEvent, lblCurrentEventTitle, lblFromTo, imgClockNow, currentNextEvent, currentPrevEvent, currentLateEvent, lblCommingUpNext, lblLateToday, lblPreviousEvent, lblCommingUpNextEventTime, lblLateTodayEventTime, imgCommingUpClock, imgLateClock, viewCommingLate;
+@synthesize lblTimer, viewBg, arrEvents, currentEvent, lblEvent, HUD, currentRoom, dictRooms, eventString, lblCurrentRoom, isThereEvent, lblCurrentEventTitle, lblFromTo, imgClockNow, currentNextEvent, currentPrevEvent, currentLateEvent, lblCommingUpNext, lblLateToday, lblPreviousEvent, lblCommingUpNextEventTime, lblLateTodayEventTime, imgCommingUpClock, imgLateClock, viewCommingLate;
 
 // When the view loads, create necessary subviews, and initialize the Google Calendar API service.
 - (void)viewDidLoad {
@@ -26,6 +26,26 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     self.service.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName clientID:kClientID clientSecret:nil];
     HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleLight];
     HUD.textLabel.text = @"Loading Calendars...";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calendarOptionDidChange:) name:@"calendarOptionDidChange" object:nil];
+}
+
+-(void)calendarOptionDidChange:(NSNotification*)notification
+{
+    NSLog(@"notification... %@", notification.object);
+    //NSInteger * row = (NSInteger*)[notification.object integerValue];
+    int row = [notification.object intValue];
+    HUD.textLabel.text = @"Loading Events...";
+    [HUD showInView:self.viewBg];
+    NSArray * allKeys = dictRooms.allKeys;
+    currentRoom = [dictRooms objectForKey:[allKeys objectAtIndex:row]];
+    NSString * strRoom = [allKeys objectAtIndex:row];
+    lblCurrentRoom.text = [NSString stringWithFormat:@"%@ %@", strRoom, ([strRoom isEqual:@"Personal"])?@"Calendar":@"Room"];
+    lblLateTodayEventTime.text = lblLateToday.text = lblPreviousEvent.text = lblCommingUpNextEventTime.text = lblCommingUpNext.text = @"";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        currentLateEvent = currentNextEvent = currentPrevEvent = nil;
+        lblLateToday.hidden = lblLateTodayEventTime.hidden = lblPreviousEvent.hidden = lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = imgLateClock.hidden = imgClockNow.hidden = viewCommingLate.hidden = YES;
+        [self queryTodaysEvents];
+    });
 }
 
 // When the view appears, ensure that the Google Calendar API service is authorized, and perform API calls.
@@ -52,9 +72,9 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             currentRoom = [dictRooms objectForKey:[allKeys objectAtIndex:0]];
             NSString * strRoom = [allKeys objectAtIndex:0];
             lblCurrentRoom.text = [NSString stringWithFormat:@"%@ Room", strRoom];
-            [pRooms setDelegate:self];
-            [pRooms setDataSource:self];
-            [pRooms reloadAllComponents];
+            NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:dictRooms forKey:@"dictRooms"];
+            [defaults synchronize];
             [self startLoadingCurrentCalendarInfo];
         }
     }];
@@ -151,7 +171,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                         lblPreviousEvent.hidden = NO;
                         lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
                     }
-                    if(i < [arrEvents count])
+                    if(i+1 < [arrEvents count])
                     {
                         currentNextEvent = [arrEvents objectAtIndex:i+1];
                         NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
@@ -183,7 +203,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 lblPreviousEvent.hidden = NO;
                 lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
             }
-            if(i < [arrEvents count])
+            if(i+1 < [arrEvents count])
             {
                 currentNextEvent = [arrEvents objectAtIndex:i+1];
                 NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
@@ -220,7 +240,6 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     [UIView animateWithDuration:.300 animations:^{
         [viewBg setBackgroundColor:colorBG];
     }];
-    [self.view bringSubviewToFront:pRooms];
 }
 
 - (void)queryTodaysEvents {
@@ -298,12 +317,6 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     });
 }
 
--(BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
-
 // Creates the auth controller for authorizing access to Google Calendar API.
 - (GTMOAuth2ViewControllerTouch *)createAuthController {
     GTMOAuth2ViewControllerTouch *authController;
@@ -338,5 +351,4 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     [alertController addAction:dismissAlertController];
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
 @end

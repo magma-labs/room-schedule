@@ -30,6 +30,8 @@
 		C847C3E31C84D62E00BAC52B /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C847C3D81C84D62E00BAC52B /* Lato-LightItalic.ttf */; };
 		C847C3E41C84D62E00BAC52B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C847C3D91C84D62E00BAC52B /* Lato-Regular.ttf */; };
 		C847C3E51C84D62E00BAC52B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C847C3DA1C84D62E00BAC52B /* OFL.txt */; };
+		C89FA6BF1C8658740065FA55 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89FA6BE1C8658740065FA55 /* RightMenuViewController.m */; };
+		C89FA6C41C865F6F0065FA55 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89FA6C31C865F6F0065FA55 /* MainViewController.m */; };
 		C8A943A81C6A529500F59CA1 /* RESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A943A71C6A529500F59CA1 /* RESTManager.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,10 @@
 		C847C3D81C84D62E00BAC52B /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		C847C3D91C84D62E00BAC52B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		C847C3DA1C84D62E00BAC52B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		C89FA6BD1C8658740065FA55 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuViewController.h; sourceTree = "<group>"; };
+		C89FA6BE1C8658740065FA55 /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuViewController.m; sourceTree = "<group>"; };
+		C89FA6C21C865F6F0065FA55 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C89FA6C31C865F6F0065FA55 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C8A943A61C6A529500F59CA1 /* RESTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTManager.h; sourceTree = "<group>"; };
 		C8A943A71C6A529500F59CA1 /* RESTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTManager.m; sourceTree = "<group>"; };
 		E32A55E617B3EA825CAA4D26 /* libPods-MagmaCalendarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MagmaCalendarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,8 +178,7 @@
 				C8A943A51C6A527B00F59CA1 /* Managers */,
 				C800700C1C651122007B363F /* AppDelegate.h */,
 				C800700D1C651122007B363F /* AppDelegate.m */,
-				C800700F1C651122007B363F /* ViewController.h */,
-				C80070101C651122007B363F /* ViewController.m */,
+				C89FA6C01C86587C0065FA55 /* ViewControllers */,
 				C80070121C651122007B363F /* Main.storyboard */,
 				C80070151C651122007B363F /* Assets.xcassets */,
 				C80070171C651122007B363F /* LaunchScreen.storyboard */,
@@ -234,6 +239,19 @@
 				C847C3DA1C84D62E00BAC52B /* OFL.txt */,
 			);
 			path = Lato;
+			sourceTree = "<group>";
+		};
+		C89FA6C01C86587C0065FA55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C800700F1C651122007B363F /* ViewController.h */,
+				C80070101C651122007B363F /* ViewController.m */,
+				C89FA6BD1C8658740065FA55 /* RightMenuViewController.h */,
+				C89FA6BE1C8658740065FA55 /* RightMenuViewController.m */,
+				C89FA6C21C865F6F0065FA55 /* MainViewController.h */,
+				C89FA6C31C865F6F0065FA55 /* MainViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		C8A943A51C6A527B00F59CA1 /* Managers */ = {
@@ -534,9 +552,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C89FA6BF1C8658740065FA55 /* RightMenuViewController.m in Sources */,
 				C80070111C651122007B363F /* ViewController.m in Sources */,
 				C8A943A81C6A529500F59CA1 /* RESTManager.m in Sources */,
 				C847C3CD1C84CB8700BAC52B /* ColorManager.m in Sources */,
+				C89FA6C41C865F6F0065FA55 /* MainViewController.m in Sources */,
 				C800700E1C651122007B363F /* AppDelegate.m in Sources */,
 				C800700B1C651122007B363F /* main.m in Sources */,
 			);

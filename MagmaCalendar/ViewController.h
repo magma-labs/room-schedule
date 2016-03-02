@@ -14,13 +14,12 @@
 #import <JGProgressHUD.h>
 #import "RESTManager.h"
 
-@interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ViewController : UIViewController
 @property (nonatomic, strong) GTLServiceCalendar *service;
 @property (nonatomic, strong) IBOutlet UILabel * lblTimer;
 @property (nonatomic, strong) IBOutlet UIView * viewBg;
 @property (nonatomic, strong) IBOutlet UILabel * lblCurrentRoom;
 @property (nonatomic, strong) IBOutlet UILabel * lblEvent;
-@property (nonatomic, strong) IBOutlet UIPickerView * pRooms;
 @property (nonatomic, strong) IBOutlet UILabel * lblCurrentEventTitle;
 @property (nonatomic, strong) IBOutlet UILabel * lblFromTo;
 @property (nonatomic, strong) IBOutlet UIImageView * imgClockNow;

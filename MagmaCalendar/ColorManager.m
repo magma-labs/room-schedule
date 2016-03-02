@@ -19,4 +19,14 @@
     return [UIColor colorWithRed:240.0f/255.0f green:92.0f/255.0f blue:93.0f/255.0f alpha:1];
 }
 
++(UIColor *)fontBusyColor
+{
+    return [UIColor colorWithRed:89.0f/255.0f green:2.0f/255.0f blue:12.0f/255.0f alpha:1];
+}
+
++(UIColor *)fontAvailableColor
+{
+    return [UIColor colorWithRed:70.0f/255.0f green:93.0f/255.0f blue:46.0f/255.0f alpha:1];
+}
+
 @end

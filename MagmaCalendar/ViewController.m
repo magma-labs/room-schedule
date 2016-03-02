@@ -15,7 +15,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
 @implementation ViewController
 
 @synthesize service = _service;
-@synthesize lblTimer, viewBg, arrEvents, currentEvent, lblEvent, HUD, currentRoom, dictRooms, eventString, lblCurrentRoom, isThereEvent, lblCurrentEventTitle, lblFromTo, imgClockNow, currentNextEvent, currentPrevEvent, currentLateEvent, lblCommingUpNext, lblLateToday, lblPreviousEvent, lblCommingUpNextEventTime, lblLateTodayEventTime, imgCommingUpClock, imgLateClock, viewCommingLate;
+@synthesize lblTimer, viewBg, arrEvents, currentEvent, lblEvent, HUD, currentRoom, dictRooms, lblCurrentRoom, isThereEvent, lblCurrentEventTitle, lblFromTo, imgClockNow, currentNextEvent, currentPrevEvent, currentLateEvent, lblCommingUpNext, lblLateToday, lblPreviousEvent, lblCommingUpNextEventTime, lblLateTodayEventTime, imgCommingUpClock, imgLateClock, viewCommingLate;
 
 // When the view loads, create necessary subviews, and initialize the Google Calendar API service.
 - (void)viewDidLoad {
@@ -124,7 +124,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
         static NSDateFormatter *dateFormatter;
         if (!dateFormatter) {
             dateFormatter = [[NSDateFormatter alloc] init];
-            dateFormatter.dateFormat = @"h:mm:ss a";
+            dateFormatter.dateFormat = @"HH:mm:ss";
         }
         lblTimer.text = [NSString stringWithFormat:@"Time: %@", [dateFormatter stringFromDate:now]];
         [self.view bringSubviewToFront:viewBg];
@@ -142,14 +142,31 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     df.dateFormat = @"HH:mm";
     BOOL hasEvent = NO;
     int i = 0;
+    id cEvent;
+    id pEvent;
+    id nEvent;
+    id lEvent; // late event
     if([arrEvents count] != 0)
     {
         currentPrevEvent = currentNextEvent = currentLateEvent = nil;
         for(NSDictionary * event in arrEvents)
         {
+            NSLog(@"event.summary: %@", [event objectForKey:@"summary"]);
             NSDate * st = [event objectForKey:@"startTime"];
             NSDate * et = [event objectForKey:@"endTime"];
             NSDate * ct = [NSDate date];
+            if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending)
+            {
+                cEvent = event;
+            }
+            else if([st compare:ct] == NSOrderedDescending && [et compare:ct] == NSOrderedDescending) //next event
+            {
+                nEvent = event;
+            }
+            else if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedAscending) //previous event
+            {
+                pEvent = event;
+            }
             if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending)
             {
                 colorBG = [ColorManager busyColor];
@@ -158,6 +175,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                     currentEvent = [event objectForKey:@"summary"];
                     [UIView animateWithDuration:.500 animations:^{
                         lblFromTo.hidden = NO;
+                        lblEvent.textColor = [ColorManager fontBusyColor];
                         lblEvent.text = [event objectForKey:@"summary"];
                         lblFromTo.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:st], [df stringFromDate:et]];
                     }];
@@ -165,31 +183,28 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                     lblCurrentEventTitle.hidden = NO;
                     imgClockNow.hidden = NO;
                     colorBG = [ColorManager busyColor];
-                    if(i > 1)
+                    if(pEvent)
                     {
-                        currentPrevEvent = [arrEvents objectAtIndex:i-1];
                         lblPreviousEvent.hidden = NO;
-                        lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
+                        lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [pEvent objectForKey:@"summary"]];
+                        lblPreviousEvent.textColor = [ColorManager fontBusyColor];
                     }
-                    if(i+1 < [arrEvents count])
+                    else if (!pEvent)
                     {
-                        currentNextEvent = [arrEvents objectAtIndex:i+1];
-                        NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
-                        NSDate * cEt = [currentNextEvent objectForKey:@"endTime"];
+                        lblPreviousEvent.hidden = YES;
+                    }
+                    if(nEvent)
+                    {
+                        NSDate * cSt = [nEvent objectForKey:@"startTime"];
+                        NSDate * cEt = [nEvent objectForKey:@"endTime"];
                         lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
-                        lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [currentNextEvent objectForKey:@"summary"]];
+                        lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [nEvent objectForKey:@"summary"]];
                         lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
                     }
-                    if(i+2 < [arrEvents count])
+                    else if (!nEvent)
                     {
-                        currentLateEvent = [arrEvents objectAtIndex:i+2];
-                        NSDate * cLSt = [currentLateEvent objectForKey:@"startTime"];
-                        NSDate * cLEt = [currentLateEvent objectForKey:@"endTime"];
-                        lblLateToday.hidden = lblLateTodayEventTime.hidden = imgLateClock.hidden = NO;
-                        lblLateToday.text = [NSString stringWithFormat:@"Late today: %@", [currentLateEvent objectForKey:@"summary"]];
-                        lblLateTodayEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cLSt], [df stringFromDate:cLEt]];
+                        lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = YES;
                     }
-                    //NSLog(@"events: %@ and %@ late %@", currentPrevEvent, currentNextEvent, currentLateEvent);
                     break;
                 }
             }
@@ -197,38 +212,28 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
         }
         if(!hasEvent)
         {
-            if(i > 1)
+            if(pEvent)
             {
-                currentPrevEvent = [arrEvents objectAtIndex:i-1];
                 lblPreviousEvent.hidden = NO;
-                lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
+                lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [pEvent objectForKey:@"summary"]];
             }
-            if(i+1 < [arrEvents count])
+            if(nEvent)
             {
-                currentNextEvent = [arrEvents objectAtIndex:i+1];
-                NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
-                NSDate * cEt = [currentNextEvent objectForKey:@"endTime"];
+                NSDate * cSt = [nEvent objectForKey:@"startTime"];
+                NSDate * cEt = [nEvent objectForKey:@"endTime"];
                 lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
-                lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [currentNextEvent objectForKey:@"summary"]];
+                lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [nEvent objectForKey:@"summary"]];
                 lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
             }
-            if(i+2 < [arrEvents count])
-            {
-                currentLateEvent = [arrEvents objectAtIndex:i+2];
-                NSDate * cLSt = [currentLateEvent objectForKey:@"startTime"];
-                NSDate * cLEt = [currentLateEvent objectForKey:@"endTime"];
-                lblLateToday.hidden = lblLateTodayEventTime.hidden = imgLateClock.hidden = NO;
-                lblLateToday.text = [NSString stringWithFormat:@"Late today: %@", [currentLateEvent objectForKey:@"summary"]];
-                lblLateTodayEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cLSt], [df stringFromDate:cLEt]];
-            }
-            NSLog(@"events: %@ and %@ late %@", currentPrevEvent, currentNextEvent, currentLateEvent);
             lblCurrentEventTitle.hidden = YES;
             if([currentRoom isEqual:@"primary"])
             {
+                lblEvent.textColor = [ColorManager fontAvailableColor];
                 lblEvent.text = @"Calendar Available";
             }
             else
             {
+                lblEvent.textColor = [ColorManager fontAvailableColor];
                 lblEvent.text = @"Room Available";
             }
             lblFromTo.hidden = YES;
@@ -268,23 +273,10 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     return dateTime;
 }
 
-// Construct a query and get a list of upcoming events from the user calendar. Display the
-// start dates and event summaries in the UITextView.
-// unused
-- (void)fetchEvents {
-    GTLQueryCalendar *query = [GTLQueryCalendar queryForEventsListWithCalendarId:@"magmalabs.io_3731333535303737383630@resource.calendar.google.com"];
-    query.maxResults = 30;
-    query.timeMin = [GTLDateTime dateTimeWithDate:[NSDate date] timeZone:[NSTimeZone localTimeZone]];
-    query.singleEvents = YES;
-    query.orderBy = kGTLCalendarOrderByStartTime;
-    [self.service executeQuery:query delegate:self didFinishSelector:@selector(displayResultWithTicket:finishedWithObject:error:)];
-}
-
 - (void)displayResultWithTicket:(GTLServiceTicket *)ticket finishedWithObject:(GTLCalendarEvents *)events error:(NSError *)error {
     if (error == nil) {
-        eventString = [[NSMutableString alloc] init];
+        arrEvents = [NSMutableArray new];
         if (events.items.count > 0) {
-            arrEvents = [NSMutableArray new];
             for (GTLCalendarEvent *event in events) {
                 GTLDateTime *start = event.start.dateTime ?: event.start.date;
                 GTLDateTime * end = event.end.dateTime ?: event.end.date;
@@ -292,7 +284,6 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 NSString *endString = [NSDateFormatter localizedStringFromDate:[end date] dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
                 if(![event.visibility isEqual:@"private"])
                 {
-                    [eventString appendFormat:@"Event: %@ - From: %@ To: %@\n", event.summary?event.summary:@"N/A", startString, endString];
                     NSMutableDictionary * dictEvent = [NSMutableDictionary new];
                     NSDateFormatter * df = [[NSDateFormatter alloc] init];
                     df.timeZone = [NSTimeZone localTimeZone];
@@ -304,9 +295,8 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                     [arrEvents addObject:dictEvent];
                 }
             }
-            //NSLog(@"events: %@", eventString);
         } else {
-            [eventString appendString:@"No upcoming events found."];
+            //no events found
         }
     } else {
         [self showAlert:@"Error" message:error.localizedDescription];

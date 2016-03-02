@@ -36,7 +36,6 @@
 @property (nonatomic, strong) JGProgressHUD * HUD;
 @property (nonatomic, strong) NSString * currentRoom;
 @property (nonatomic, strong) NSMutableDictionary * dictRooms;
-@property (nonatomic, strong) NSMutableString * eventString;
 @property (nonatomic, assign) BOOL isThereEvent;
 @property (nonatomic, strong) id currentPrevEvent;
 @property (nonatomic, strong) id currentNextEvent;

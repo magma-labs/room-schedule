@@ -12,4 +12,6 @@
 @interface ColorManager : NSObject
 +(UIColor*)availableColor;
 +(UIColor*)busyColor;
++(UIColor*)fontAvailableColor;
++(UIColor*)fontBusyColor;
 @end

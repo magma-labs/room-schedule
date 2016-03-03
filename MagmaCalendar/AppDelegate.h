@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Fabric/Fabric.h>
+#import "RightMenuViewController.h"
+#import "ViewController.h"
 #import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-
 @end
-

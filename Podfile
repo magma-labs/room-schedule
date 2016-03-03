@@ -10,6 +10,7 @@ pod 'Google-API-Client', '~> 1.0'
 pod 'JGProgressHUD', '~> 1.3.1'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'JASidePanels', '~> 1.3'
 end
 
 target 'MagmaCalendarTests' do

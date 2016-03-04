@@ -13,4 +13,5 @@
 @interface RightMenuViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, strong) NSMutableDictionary * dictRooms;
 @property (nonatomic, strong) IBOutlet UIPickerView * pRooms;
+-(IBAction)doLogout:(id)sender;
 @end

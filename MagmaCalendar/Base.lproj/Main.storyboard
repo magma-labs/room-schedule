@@ -750,28 +750,43 @@
                                     </mask>
                                 </variation>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99R-if-ptM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="doLogout:" destination="Bk4-Ha-5zV" eventType="touchUpInside" id="ttI-P4-KDs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="99R-if-ptM" secondAttribute="bottom" constant="20" symbolic="YES" id="SyH-xf-zy9"/>
                             <constraint firstItem="duE-5M-yS2" firstAttribute="top" secondItem="C9I-VN-ZZo" secondAttribute="top" id="XR3-zn-OM7"/>
                             <constraint firstAttribute="trailing" secondItem="duE-5M-yS2" secondAttribute="trailing" id="iRK-wN-zc0"/>
+                            <constraint firstItem="99R-if-ptM" firstAttribute="trailing" secondItem="C9I-VN-ZZo" secondAttribute="trailingMargin" id="v0m-YO-pVZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="duE-5M-yS2"/>
+                                <exclude reference="99R-if-ptM"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="XR3-zn-OM7"/>
                                 <exclude reference="iRK-wN-zc0"/>
+                                <exclude reference="SyH-xf-zy9"/>
+                                <exclude reference="v0m-YO-pVZ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="subviews">
                                 <include reference="duE-5M-yS2"/>
+                                <include reference="99R-if-ptM"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="XR3-zn-OM7"/>
                                 <include reference="iRK-wN-zc0"/>
+                                <include reference="SyH-xf-zy9"/>
+                                <include reference="v0m-YO-pVZ"/>
                             </mask>
                         </variation>
                     </view>

@@ -31,7 +31,14 @@
     rightMenuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"RightMenuViewController"];    
     [self setCenterPanel:viewController];
     [self setRightPanel:rightMenuViewController];
-    self.rightFixedWidth = 281.0f;
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        self.rightFixedWidth = 200.0f;
+    }
+    else
+    {
+        self.rightFixedWidth = 281.0f;
+    }
 }
 
 -(BOOL)prefersStatusBarHidden

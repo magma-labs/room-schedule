@@ -68,6 +68,12 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"calendarOptionDidChange" object:strRoom];
 }
 
+
+-(void)doLogout:(id)sender
+{
+    [((JASidePanelController*)self.parentViewController) showCenterPanelAnimated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidLogout" object:nil];
+}
 /*
 #pragma mark - Navigation
 

@@ -24,9 +24,14 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     // Initialize the Google Calendar API service & load existing credentials from the keychain if available.
     self.service = [[GTLServiceCalendar alloc] init];
     self.service.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName clientID:kClientID clientSecret:nil];
+    if(![[[NSUserDefaults standardUserDefaults] objectForKey:@"isUserLogged"] boolValue])
+    {
+        [self doLogout:nil];
+        return;
+    }
     HUD = [JGProgressHUD progressHUDWithStyle:JGProgressHUDStyleLight];
     HUD.textLabel.text = @"Loading Calendars...";
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calendarOptionDidChange:) name:@"calendarOptionDidChange" object:nil];
+    [self doAddNotifications];
 }
 
 -(void)calendarOptionDidChange:(NSNotification*)notification
@@ -147,6 +152,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
         currentPrevEvent = currentNextEvent = currentLateEvent = nil;
         for(NSDictionary * event in arrEvents)
         {
+            NSLog(@"Event: %@", [event objectForKey:@"summary"]);
             NSDate * st = [event objectForKey:@"startTime"];
             NSDate * et = [event objectForKey:@"endTime"];
             NSDate * ct = [NSDate date];
@@ -227,10 +233,20 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 lblPreviousEvent.hidden = NO;
                 lblPreviousEvent.textColor = [ColorManager fontAvailableColor];
                 lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
-                if([arrEvents count] > 1)
-                    currentNextEvent = [arrEvents objectAtIndex:1];
-                if([arrEvents count] > 2)
-                    currentLateEvent = [arrEvents objectAtIndex:2];
+                NSDate * st = [currentPrevEvent objectForKey:@"startTime"];
+                NSDate * et = [currentPrevEvent objectForKey:@"endTime"];
+                NSDate * ct = [NSDate date];
+                if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending) // current event - working
+                {
+                    if([arrEvents count] > 1)
+                        currentNextEvent = [arrEvents objectAtIndex:1];
+                    if([arrEvents count] > 2)
+                        currentLateEvent = [arrEvents objectAtIndex:2];
+                }
+            }
+            else if(!currentPrevEvent)
+            {
+                lblPreviousEvent.hidden = YES;
             }
             if(currentNextEvent)
             {
@@ -271,6 +287,11 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             currentEvent = @"";
             colorBG = [ColorManager availableColor];
         }
+    }
+    else
+    {
+        lblPreviousEvent.hidden = YES;
+        currentPrevEvent = nil;
     }
     [UIView animateWithDuration:.300 animations:^{
         [viewBg setBackgroundColor:colorBG];
@@ -360,7 +381,22 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     }
     else {
         self.service.authorizer = authResult;
+        [[NSUserDefaults standardUserDefaults] setObject:@YES forKey:@"isUserLogged"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self doAddNotifications];
         [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+-(void)doLogout:(NSNotification*)notification
+{
+    self.service = [[GTLServiceCalendar alloc] init];
+    self.service.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName clientID:kClientID clientSecret:nil];
+    self.service.authorizer = nil;
+    if (!self.service.authorizer.canAuthorize) {
+        [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:@"isUserLogged"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self presentViewController:[self createAuthController] animated:YES completion:nil];
     }
 }
 
@@ -370,5 +406,11 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     UIAlertAction* dismissAlertController = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:dismissAlertController];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void)doAddNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(calendarOptionDidChange:) name:@"calendarOptionDidChange" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doLogout:) name:@"userDidLogout" object:nil];
 }
 @end

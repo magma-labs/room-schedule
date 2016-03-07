@@ -77,10 +77,13 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             currentRoom = [dictRooms objectForKey:[allKeys objectAtIndex:0]];
             NSString * strRoom = [allKeys objectAtIndex:0];
             lblCurrentRoom.text = [NSString stringWithFormat:@"%@ Room", strRoom];
-            NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:dictRooms forKey:@"dictRooms"];
-            [defaults synchronize];
-            [self startLoadingCurrentCalendarInfo];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:dictRooms forKey:@"dictRooms"];
+                [defaults synchronize];
+                [self startLoadingCurrentCalendarInfo];
+                [self refreshCalendarInfo];
+            });
         }
     }];
 }
@@ -114,6 +117,20 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     lblLateToday.hidden = lblLateTodayEventTime.hidden = lblPreviousEvent.hidden = lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = YES;
     //currentLateEvent = currentNextEvent = currentPrevEvent = nil;
     [self startLoadingCurrentCalendarInfo];
+}
+
+-(void)refreshCalendarInfo
+{
+    NSTimer * refreshTimer = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(refreshTick:) userInfo:nil repeats:YES];
+    [refreshTimer fire];
+}
+
+- (void)refreshTick:(NSTimer *)timer
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"##### refresh calendar #########");
+        [self queryTodaysEvents];
+    });
 }
 
 -(void)startLoadingCurrentCalendarInfo
@@ -159,6 +176,14 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedAscending) //previous event - working
             {
                 currentPrevEvent = event;
+            }
+            else if([st compare:ct] > NSOrderedAscending)//looking for next event
+            {
+                currentNextEvent = event;
+                if([arrEvents count] == 2)
+                {
+                    currentLateEvent = [arrEvents objectAtIndex:1];
+                }
             }
             else if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending) // current event - working
             {
@@ -227,7 +252,17 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
         }
         if(!hasEvent)
         {
-            currentNextEvent = currentLateEvent = nil;
+            if(!currentNextEvent && !currentLateEvent)
+                currentNextEvent = currentLateEvent = nil;
+            /*
+            if([arrEvents count] != 0)
+            {
+                if([arrEvents count] > 0)
+                    currentNextEvent = [arrEvents objectAtIndex:0];
+                if([arrEvents count] > 1)
+                    currentLateEvent = [arrEvents objectAtIndex:1];
+            }
+             */
             if(currentPrevEvent)
             {
                 lblPreviousEvent.hidden = NO;

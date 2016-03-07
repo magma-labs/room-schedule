@@ -18,7 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    /*
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right"
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(toggleRightPanel)];
+     */
 }
+
+/*
+-(void)toggleRightPanel
+{
+    [[self.parentViewController valueForKey:@"sidePanelController"] performSelector:@selector(toggleRightPanel:)];
+}
+ */
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

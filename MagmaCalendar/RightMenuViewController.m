@@ -18,14 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    if([defaults objectForKey:@"dictRooms"])
-    {
-        [pRooms setDelegate:self];
-        [pRooms setDataSource:self];
-        dictRooms = [defaults objectForKey:@"dictRooms"];
-        [pRooms reloadAllComponents];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        if([defaults objectForKey:@"dictRooms"])
+        {
+            [pRooms setDelegate:self];
+            [pRooms setDataSource:self];
+            dictRooms = [defaults objectForKey:@"dictRooms"];
+            [pRooms reloadAllComponents];
+        }
+    });
 }
 
 - (void)didReceiveMemoryWarning {

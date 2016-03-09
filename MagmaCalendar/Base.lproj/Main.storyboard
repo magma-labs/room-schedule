@@ -70,7 +70,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Nwd-qb-9y1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
@@ -194,7 +194,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vM-lh-527" userLabel="View Current Event Bottom Line">
                                 <rect key="frame" x="98" y="414" width="405" height="1"/>
-                                <color key="backgroundColor" red="0.38431372549019605" green="0.023529411764705882" blue="0.066666666666666666" alpha="0.2019396551724138" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.38431372549019605" green="0.023529411764705882" blue="0.066666666666666666" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ajl-Qt-ykM"/>
                                 </constraints>
@@ -208,7 +208,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming up next: Focus time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLa-ye-BPd">
                                 <rect key="frame" x="98" y="423" width="405" height="29"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
-                                <color key="textColor" red="0.27450980392156865" green="0.36470588235294116" blue="0.1803921568627451" alpha="0.50234374999999998" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.27450980392156865" green="0.36470588235294116" blue="0.1803921568627451" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="191" y="275" width="209" height="21"/>
@@ -220,7 +220,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-iZ-gNS" userLabel="View Coming Up Next Container">
                                 <rect key="frame" x="204" y="460" width="192" height="35"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="Kw4-ho-Fwm">
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerIcon2" translatesAutoresizingMaskIntoConstraints="NO" id="Kw4-ho-Fwm">
                                         <rect key="frame" x="8" y="8" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Ozg-za-Ix9"/>
@@ -275,7 +275,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Late today: Focus time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wci-C4-2IM">
                                 <rect key="frame" x="98" y="512" width="405" height="22"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <color key="textColor" red="0.27450980390000002" green="0.36470588240000001" blue="0.18039215689999999" alpha="0.50234374999999998" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.27450980392156865" green="0.36470588235294116" blue="0.1803921568627451" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="219" y="320" width="154" height="21"/>
@@ -287,7 +287,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Da-fE-soG" userLabel="View Late Today Container">
                                 <rect key="frame" x="227" y="542" width="146" height="35"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerIcon3" translatesAutoresizingMaskIntoConstraints="NO" id="2ak-57-PUX">
+                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timerIcon3" translatesAutoresizingMaskIntoConstraints="NO" id="2ak-57-PUX">
                                         <rect key="frame" x="8" y="8" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="3lI-3K-tYU"/>

@@ -224,8 +224,8 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
                 lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [currentNextEvent objectForKey:@"summary"]];
                 lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
-                lblCommingUpNext.textColor = [ColorManager fontBusyColor];
-                lblCommingUpNextEventTime.textColor = [ColorManager fontBusyColor];
+                lblCommingUpNext.textColor = [ColorManager fontBusyColorComingUp];
+                lblCommingUpNextEventTime.textColor = [ColorManager fontBusyColorComingUp];
             }
             else if (!currentNextEvent)
             {
@@ -238,7 +238,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 lblLateToday.hidden = lblLateTodayEventTime.hidden = imgLateClock.hidden = viewCommingLate.hidden = NO;
                 lblLateToday.text = [NSString stringWithFormat:@"Late today: %@", [currentLateEvent objectForKey:@"summary"]];
                 lblLateTodayEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:clSt], [df stringFromDate:clEt]];
-                lblLateToday.textColor = lblLateTodayEventTime.textColor = [ColorManager fontBusyColor];
+                lblLateToday.textColor = lblLateTodayEventTime.textColor = [ColorManager fontBusyColorLate];
             }
             else if(!currentLateEvent)
             {
@@ -282,8 +282,8 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             {
                 NSDate * cSt = [currentNextEvent objectForKey:@"startTime"];
                 NSDate * cEt = [currentNextEvent objectForKey:@"endTime"];
-                lblCommingUpNextEventTime.textColor = [ColorManager fontAvailableColor];
-                lblCommingUpNext.textColor = [ColorManager fontAvailableColor];
+                lblCommingUpNextEventTime.textColor = [ColorManager fontAvailableColorComingUp];
+                lblCommingUpNext.textColor = [ColorManager fontAvailableColorComingUp];
                 lblCommingUpNext.hidden = lblCommingUpNextEventTime.hidden = imgCommingUpClock.hidden = NO;
                 lblCommingUpNext.text = [NSString stringWithFormat:@"Comming up next: %@", [currentNextEvent objectForKey:@"summary"]];
                 lblCommingUpNextEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:cSt], [df stringFromDate:cEt]];
@@ -295,7 +295,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 lblLateToday.hidden = lblLateTodayEventTime.hidden = imgLateClock.hidden = viewCommingLate.hidden = NO;
                 lblLateToday.text = [NSString stringWithFormat:@"Late today: %@", [currentLateEvent objectForKey:@"summary"]];
                 lblLateTodayEventTime.text = [NSString stringWithFormat:@"%@ - %@", [df stringFromDate:clSt], [df stringFromDate:clEt]];
-                lblLateToday.textColor = lblLateTodayEventTime.textColor = [ColorManager fontAvailableColor];
+                lblLateToday.textColor = lblLateTodayEventTime.textColor = [ColorManager fontAvailableColorLate];
             }
             else if(!currentLateEvent)
             {
@@ -340,7 +340,7 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     [self.service executeQuery:query delegate:self didFinishSelector:@selector(displayResultWithTicket:finishedWithObject:error:)];
 }
 
-#pragma mark Query Events
+#pragma mark - Query Events
 // Utility routine to make a GTLDateTime object for sometime today
 - (GTLDateTime *)dateTimeForTodayAtHour:(int)hour minute:(int)minute second:(int)second {
     NSUInteger const kComponentBits = (NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond);

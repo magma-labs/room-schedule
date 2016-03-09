@@ -282,6 +282,19 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             else if(!currentPrevEvent)
             {
                 lblPreviousEvent.hidden = YES;
+                id tmpNextEvent = ([arrEvents count] > 1)?[arrEvents objectAtIndex:1]:nil;
+                if(tmpNextEvent)
+                {
+                    NSDate * st = [tmpNextEvent objectForKey:@"startTime"];
+                    NSDate * ct = [NSDate date];
+                    if([st compare:ct] > NSOrderedAscending) // current event - working
+                    {
+                        if([arrEvents count] > 1)
+                            currentNextEvent = [arrEvents objectAtIndex:1];
+                        if([arrEvents count] > 2)
+                            currentLateEvent = [arrEvents objectAtIndex:2];
+                    }
+                }
             }
             if(currentNextEvent)
             {

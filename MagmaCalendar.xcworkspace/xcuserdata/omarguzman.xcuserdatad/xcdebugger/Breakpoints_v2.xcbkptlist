@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MagmaCalendar/ViewController.m"
-            timestampString = "479237559.857036"
+            timestampString = "479245627.297809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "-showAlert:message:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,7 +42,7 @@
                   moduleName = "MagmaCalendar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/omarguzman/Desktop/MagmaLabs/MagmaCalendar/Pods/JASidePanels/JASidePanels/Source/JASidePanelController.m"
-                  timestampString = "479237170.857071"
+                  timestampString = "479245487.101838"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
@@ -57,7 +57,7 @@
                   moduleName = "MagmaCalendar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/omarguzman/Desktop/MagmaLabs/MagmaCalendar/Pods/JASidePanels/JASidePanels/Source/JASidePanelController.m"
-                  timestampString = "479237170.857362"
+                  timestampString = "479245487.102263"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MagmaCalendar/ViewController.m"
-            timestampString = "479237559.857036"
+            timestampString = "479245627.297809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "-createAuthController"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,60 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MagmaCalendar/ViewController.m"
-            timestampString = "479237559.857036"
+            timestampString = "479245627.297809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-dateTimeForTodayAtHour:minute:second:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MagmaCalendar/ViewController.m"
-            timestampString = "478837601.702759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "-setThisBackgroundColor"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MagmaCalendar/ViewController.m"
-            timestampString = "478837470.794344"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-setThisBackgroundColor"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MagmaCalendar/ViewController.m"
-            timestampString = "479237170.751069"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "-setThisBackgroundColor"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

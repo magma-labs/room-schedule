@@ -177,20 +177,16 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             {
                 currentPrevEvent = event;
             }
-            else if([st compare:ct] > NSOrderedAscending)//looking for next event
-            {
-                currentNextEvent = event;
-                if([arrEvents count] == 2)
-                {
-                    currentLateEvent = [arrEvents objectAtIndex:1];
-                }
-            }
             else if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending) // current event - working
             {
                 colorBG = [ColorManager busyColor];
                 if(![currentEvent isEqual:[event objectForKey:@"summary"]])
                 {
                     currentEvent = [event objectForKey:@"summary"];
+                    if([arrEvents count] > 1)
+                        currentNextEvent = [arrEvents objectAtIndex:1];
+                    if([arrEvents count] > 2)
+                        currentLateEvent = [arrEvents objectAtIndex:2];
                     [UIView animateWithDuration:.500 animations:^{
                         lblFromTo.hidden = NO;
                         lblEvent.textColor = [ColorManager fontBusyColor];
@@ -254,30 +250,16 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
         {
             if(!currentNextEvent && !currentLateEvent)
                 currentNextEvent = currentLateEvent = nil;
-            /*
-            if([arrEvents count] != 0)
-            {
-                if([arrEvents count] > 0)
-                    currentNextEvent = [arrEvents objectAtIndex:0];
-                if([arrEvents count] > 1)
-                    currentLateEvent = [arrEvents objectAtIndex:1];
-            }
-             */
             if(currentPrevEvent)
             {
                 lblPreviousEvent.hidden = NO;
                 lblPreviousEvent.textColor = [ColorManager fontAvailableColor];
                 lblPreviousEvent.text = [NSString stringWithFormat:@"Previous event: %@", [currentPrevEvent objectForKey:@"summary"]];
-                NSDate * st = [currentPrevEvent objectForKey:@"startTime"];
-                NSDate * et = [currentPrevEvent objectForKey:@"endTime"];
-                NSDate * ct = [NSDate date];
-                if([st compare:ct] == NSOrderedAscending && [et compare:ct] == NSOrderedDescending) // current event - working
-                {
-                    if([arrEvents count] > 1)
-                        currentNextEvent = [arrEvents objectAtIndex:1];
-                    if([arrEvents count] > 2)
-                        currentLateEvent = [arrEvents objectAtIndex:2];
-                }
+                int idx = (int)[arrEvents indexOfObject:currentPrevEvent];
+                if([arrEvents count] > idx+1)
+                    currentNextEvent = [arrEvents objectAtIndex:idx+1];
+                if([arrEvents count] > idx+2)
+                    currentLateEvent = [arrEvents objectAtIndex:idx+2];
             }
             else if(!currentPrevEvent)
             {

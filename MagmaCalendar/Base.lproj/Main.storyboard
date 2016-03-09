@@ -65,10 +65,10 @@
                                     <rect key="frame" x="340" y="6" width="121" height="50"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reylero Room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-gd-AGb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reylero Room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-gd-AGb">
                                 <rect key="frame" x="62" y="113" width="474" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Nwd-qb-9y1"/>
+                                    <constraint firstAttribute="height" constant="38" id="m0e-WD-LDB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,28 +126,57 @@
                                     <rect key="frame" x="34" y="155" width="332" height="1"/>
                                 </variation>
                             </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Event:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE4-rT-Q34">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Event:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tE4-rT-Q34">
                                 <rect key="frame" x="210" y="268" width="162" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FKv-dz-Ort"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="24"/>
                                 <color key="textColor" red="0.34901960784313724" green="0.0078431372549019607" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FKv-dz-Ort"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="189" y="196" width="222" height="21"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="90" y="151" width="222" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="FKv-dz-Ort"/>
+                                    </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Event: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dht-r2-7kL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Event: " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dht-r2-7kL">
                                 <rect key="frame" x="97" y="305" width="405" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="L7e-G4-qSu"/>
+                                    <constraint firstAttribute="height" constant="30" id="WBp-MU-sz7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="48"/>
                                 <color key="textColor" red="0.27450980392156865" green="0.36470588235294116" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="L7e-G4-qSu"/>
+                                        <exclude reference="WBp-MU-sz7"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="5" y="200" width="588" height="57"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="8" y="174" width="372" height="21"/>
+                                    <mask key="constraints">
+                                        <include reference="WBp-MU-sz7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="L7e-G4-qSu"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-Zu-Tpc" userLabel="View From To Container">
@@ -362,6 +391,7 @@
                             <constraint firstItem="Wci-C4-2IM" firstAttribute="top" secondItem="gbb-R0-maL" secondAttribute="bottom" constant="8" id="gXR-Hm-P6u"/>
                             <constraint firstItem="cIP-0q-iIX" firstAttribute="top" secondItem="Q1L-gd-AGb" secondAttribute="bottom" id="khO-T5-NYg"/>
                             <constraint firstItem="9Da-fE-soG" firstAttribute="top" secondItem="Wci-C4-2IM" secondAttribute="bottom" constant="8" id="lF9-4n-yXk"/>
+                            <constraint firstItem="B5n-i3-eid" firstAttribute="top" secondItem="cIP-0q-iIX" secondAttribute="bottom" constant="20" id="n16-wL-Wjj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dht-r2-7kL" secondAttribute="trailing" constant="78" id="nVe-Pb-c47"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wci-C4-2IM" secondAttribute="trailing" constant="77" id="qM3-4h-9zN"/>
                             <constraint firstItem="X8Z-Zu-Tpc" firstAttribute="top" secondItem="dht-r2-7kL" secondAttribute="bottom" constant="6" id="sVc-eZ-07h"/>
@@ -371,6 +401,39 @@
                             <constraint firstAttribute="leadingMargin" secondItem="x83-52-9iI" secondAttribute="leading" id="wr6-BK-rdF"/>
                             <constraint firstItem="gbb-R0-maL" firstAttribute="top" secondItem="Egq-iZ-gNS" secondAttribute="bottom" constant="8" id="xQs-9v-8OD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="n16-wL-Wjj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="x83-52-9iI"/>
+                                <include reference="B5n-i3-eid"/>
+                                <exclude reference="gLa-ye-BPd"/>
+                                <exclude reference="Egq-iZ-gNS"/>
+                                <exclude reference="gbb-R0-maL"/>
+                                <exclude reference="Wci-C4-2IM"/>
+                                <exclude reference="9Da-fE-soG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="70n-g1-GnF"/>
+                                <include reference="n16-wL-Wjj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <exclude reference="x83-52-9iI"/>
+                                <exclude reference="gLa-ye-BPd"/>
+                                <exclude reference="Egq-iZ-gNS"/>
+                                <exclude reference="gbb-R0-maL"/>
+                                <include reference="Wci-C4-2IM"/>
+                                <exclude reference="9Da-fE-soG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="n16-wL-Wjj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="imgClockNow" destination="KcB-dv-ubM" id="OYR-4Y-NwG"/>

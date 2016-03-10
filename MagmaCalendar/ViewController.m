@@ -162,9 +162,9 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
     UIColor * fontColor = [ColorManager fontAvailableColor];
     BOOL hasEvent = NO;
     int currentEvIdx = 0;
+    currentPrevEvent = currentLiveEvent = currentNextEvent = currentLateEvent = nil;
     if([arrEvents count] != 0)
     {
-        currentPrevEvent = currentLiveEvent = currentNextEvent = currentLateEvent = nil;
         for(NSDictionary * event in arrEvents)
         {
             NSLog(@"Event: %@", [event objectForKey:@"summary"]);
@@ -186,7 +186,9 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
             }
             else // checking for next event
             {
-                currentNextEvent = event;
+                currentEvIdx = (int)[arrEvents indexOfObject:event];
+                currentNextEvent = [arrEvents objectAtIndex:currentEvIdx];
+                currentLateEvent = (currentEvIdx+1 < [arrEvents count])?[arrEvents objectAtIndex:currentEvIdx+1]:nil;
                 break;
             }
         }
@@ -216,6 +218,11 @@ static NSString *const kClientID = @"769354150819-pll3a1p7c9i3o5l682b6stullgr815
                 currentEvIdx = (int)[arrEvents indexOfObject:currentPrevEvent];
                 currentNextEvent = (currentEvIdx+1 < [arrEvents count])?[arrEvents objectAtIndex:currentEvIdx+1]:nil;
                 currentLateEvent = (currentEvIdx+2 < [arrEvents count])?[arrEvents objectAtIndex:currentEvIdx+2]:nil;
+            }
+            if(currentNextEvent)
+            {
+                currentEvIdx = (int)[arrEvents indexOfObject:currentNextEvent];
+                currentLateEvent = (currentEvIdx+1 < [arrEvents count])?[arrEvents objectAtIndex:currentEvIdx+1]:nil;
             }
         }
     }

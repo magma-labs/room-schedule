@@ -38,6 +38,7 @@
 @property (nonatomic, strong) NSMutableDictionary * dictRooms;
 @property (nonatomic, assign) BOOL isThereEvent;
 @property (nonatomic, strong) id currentPrevEvent;
+@property (nonatomic, strong) id currentLiveEvent;
 @property (nonatomic, strong) id currentNextEvent;
 @property (nonatomic, strong) id currentLateEvent;
 @end

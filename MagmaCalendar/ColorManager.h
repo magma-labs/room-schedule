@@ -13,5 +13,9 @@
 +(UIColor*)availableColor;
 +(UIColor*)busyColor;
 +(UIColor*)fontAvailableColor;
++(UIColor*)fontAvailableColorComingUp;
++(UIColor*)fontAvailableColorLate;
 +(UIColor*)fontBusyColor;
++(UIColor*)fontBusyColorComingUp;
++(UIColor*)fontBusyColorLate;
 @end
